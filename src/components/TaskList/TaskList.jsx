@@ -2,7 +2,7 @@ import React from "react";
 
 const TaskList = () => {
     return (
-        <div id="slider" className="h-[45%] w-full flex items-center justify-start flex-nowrap overflow-x-auto gap-8 py-8 mt-10 scrollbar-hide">
+        <div  className="h-[45%] w-full flex items-center justify-start flex-nowrap overflow-x-auto gap-8 py-8 mt-10 custom-scrollbar scroll ">
             <div className="h-full w-[335px] shrink-0 p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl border border-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/30">
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="bg-gradient-to-r from-red-500 to-pink-500 px-4 py-1 text-xs font-bold rounded-full text-white uppercase tracking-wide shadow-lg">Critical</h3>

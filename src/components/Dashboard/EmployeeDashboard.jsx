@@ -5,7 +5,7 @@ import TaskNumber from "./DashboardCompo/taskNumber/TaskNumber";
 
 const EmployeeDashboard = () => {
     return (
-        <div className="bg-[#1C1C1C] w-full  px-20  h-screen">
+        <div className="bg-[#121212] w-full  px-20  h-screen">
             <Header />
             <TaskNumber/>
             <TaskList />

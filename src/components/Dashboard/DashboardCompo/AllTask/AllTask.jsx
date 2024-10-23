@@ -2,7 +2,7 @@ import React from 'react'
 
 const AllTask = () => {
   return (
-    <div className="w-full h-50 bg-[#1C1C1C] p-5 mt-10 flex flex-col gap-5 overflow-y-auto custom-scrollbar">
+    <div className="w-full h-48 bg-[#1C1C1C] p-5 mt-10 flex flex-col gap-5 overflow-y-auto rounded-3xl custom-scrollbar">
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-4 px-5 flex justify-between items-center rounded-xl shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-red-500/30">
             <h2 className="text-white font-semibold">Aniket</h2>
             <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-bold">Make a UI Design</h3>
