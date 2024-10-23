@@ -6,6 +6,9 @@ body{
     background-color: black;
     color: white;
 }
+input{
+    color: black;
+}
 
 #slider::-webkit-scrollbar{
     display: none;
