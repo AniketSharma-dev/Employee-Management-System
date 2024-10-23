@@ -3,10 +3,10 @@ import TaskList from "../TaskList/TaskList";
 import Header from "./DashboardCompo/DashBNavbar/Header";
 import TaskNumber from "./DashboardCompo/taskNumber/TaskNumber";
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({user}) => {
     return (
         <div className="bg-[#121212] w-full  px-20  h-screen">
-            <Header />
+            <Header user={user} />
             <TaskNumber/>
             <TaskList />
         </div>
