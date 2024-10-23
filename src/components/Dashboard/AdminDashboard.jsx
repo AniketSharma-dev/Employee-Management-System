@@ -6,10 +6,10 @@ import AllTask from './DashboardCompo/AllTask/AllTask'
 const AdminDashboard = () => {
     const admin = "Admin Aniket"
   return (
-    <div className="bg-[#1C1C1C] w-full  px-20  h-screen">
+    <div className="bg-[#000000] w-full  px-20  h-screen">
         <Header Admin={admin} />
         <CreateTask/>
-        {/* <AllTask/> */}
+        <AllTask/>
     </div>
   )
 }
