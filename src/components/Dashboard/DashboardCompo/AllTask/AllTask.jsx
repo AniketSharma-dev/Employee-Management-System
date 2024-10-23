@@ -8,6 +8,26 @@ const AllTask = () => {
             <h3>Make a UI Design</h3>
             <h5>Status</h5>
         </div>
+        <div className="bg-red-500 py-2">
+            <h2>Aniket</h2>
+            <h3>Make a UI Design</h3>
+            <h5>Status</h5>
+        </div>
+        <div className="bg-red-500 py-2">
+            <h2>Aniket</h2>
+            <h3>Make a UI Design</h3>
+            <h5>Status</h5>
+        </div>
+        <div className="bg-red-500 py-2">
+            <h2>Aniket</h2>
+            <h3>Make a UI Design</h3>
+            <h5>Status</h5>
+        </div>
+        <div className="bg-red-500 py-2">
+            <h2>Aniket</h2>
+            <h3>Make a UI Design</h3>
+            <h5>Status</h5>
+        </div>
     </div>
   )
 }
