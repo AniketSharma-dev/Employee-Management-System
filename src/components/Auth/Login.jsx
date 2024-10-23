@@ -1,53 +1,68 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({handelLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(
-      "User Email : " + email + "\nUser Password : " + password + "\nSubmited"
-    );
+    console.log(email, password);
+    
+    handelLogin(email, password);
     setEmail("");
     setPassword("");
   };
 
   return (
-    <div className=" w-full h-screen flex items-center justify-center ">
-      <div className="border-2 rounded-2xl px-32 py-28 border-emerald-700">
+    <div className="w-full h-screen flex items-center justify-center bg-[#121212]">
+      <div className="bg-[#1E1E1E] rounded-2xl p-10 shadow-2xl w-[400px] backdrop-blur-lg bg-opacity-80">
+        <h2 className="text-4xl font-bold text-center mb-8 text-white bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent pb-1">Login</h2>
         <form
-          onSubmit={(e) => {
-            submitHandler(e);
-          }}
-          className="w-full flex flex-col items-center justify-center gap-7"
+          onSubmit={submitHandler}
+          className="w-full flex flex-col items-center justify-center gap-6"
         >
-          <div className="flex flex-col gap-3">
-            <input
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              type="email"
-              placeholder="Enter Your Email"
-              className="border-2 border-blue-600 rounded-full outline-none bg-transparent px-5 py-3  placeholder:text-gray-400"
-              required
-            />
-            <input
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              type="password"
-              placeholder="Enter Your Password"
-              className="border-2 border-blue-600 rounded-full outline-none bg-transparent px-5 py-3  placeholder:text-gray-400"
-              required
-            />
+          <div className="w-full space-y-5">
+            <div className="relative">
+              <input
+                name="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Enter Your Email"
+                className="w-full px-5 py-4 bg-[#2A2A2A] border-2 border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 text-white placeholder-gray-900 transition duration-300 caret-white"
+                autoComplete="on"
+                required
+                style={{
+                  WebkitTextFillColor: 'white',
+                  WebkitBoxShadow: '0 0 0px 1000px #2A2A2A inset'
+                }}
+              />
+            </div>
+            <div className="relative">
+              <input
+                name="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="Enter Your Password"
+                className="w-full px-5 py-4 bg-[#2A2A2A] border-2 border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 text-white placeholder-gray-900 transition duration-300 caret-white"
+                autoComplete="on"
+                required
+                style={{
+                  WebkitTextFillColor: 'white',
+                  WebkitBoxShadow: '0 0 0px 1000px #2A2A2A inset'
+                }}
+              />
+            </div>
           </div>
-          <button className="border-none  w-full rounded-full outline-none bg-yellow-400 px-5 py-3 placeholder:text-white">
+          <button className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
             Log In
           </button>
         </form>
+        <div className="mt-8 flex justify-between items-center text-sm">
+          <a href="#" className="text-blue-400 hover:text-blue-300 transition duration-300">Forgot Password?</a>
+          <a href="#" className="text-purple-400 hover:text-purple-300 transition duration-300">Create Account</a>
+        </div>
       </div>
     </div>
   );

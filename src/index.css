@@ -2,13 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* body{
     background-color: black;
     color: white;
 }
 input{
     color: black;
-}
+} */
+
+
+/* <style jsx>{` */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #2d3748;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #4a5568;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #718096;
+    }
+  /* `}</style> */
+  
+
+
 
 #slider::-webkit-scrollbar{
     display: none;

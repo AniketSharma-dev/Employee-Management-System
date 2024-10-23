@@ -2,22 +2,34 @@ import React from "react";
 
 const TaskNumber = () => {
     return (
-        <div className="flex mt-10 justify-between w-full  gap-5 ">
-            <div className="w-[45%] p-10 bg-blue-400 rounded-xl">
-                <h2 className="text-3xl font-semibold ">1</h2>
-                <h3 className="text-2xl font-medium">New Task</h3>
+        <div className="grid grid-cols-4 gap-6 mt-10">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <div className="h-1 bg-gradient-to-r from-blue-400 to-blue-600 w-full"></div>
+                <div className="p-6">
+                    <h2 className="text-4xl font-bold text-blue-400 mb-2">1</h2>
+                    <h3 className="text-lg font-medium text-blue-200">New Tasks</h3>
+                </div>
             </div>
-            <div className="w-[45%] p-10 bg-green-400 rounded-xl">
-                <h2 className="text-3xl font-semibold ">3</h2>
-                <h3 className="text-2xl font-medium">Completed Task</h3>
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <div className="h-1 bg-gradient-to-r from-green-400 to-green-600 w-full"></div>
+                <div className="p-6">
+                    <h2 className="text-4xl font-bold text-green-400 mb-2">3</h2>
+                    <h3 className="text-lg font-medium text-green-200">Completed Tasks</h3>
+                </div>
             </div>
-            <div className="w-[45%] p-10 bg-yellow-400 rounded-xl ">
-                <h2 className="text-3xl text-black font-semibold ">0</h2>
-                <h3 className="text-2xl text-black font-medium">Accepted Task</h3>
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <div className="h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 w-full"></div>
+                <div className="p-6">
+                    <h2 className="text-4xl font-bold text-yellow-400 mb-2">0</h2>
+                    <h3 className="text-lg font-medium text-yellow-200">Accepted Tasks</h3>
+                </div>
             </div>
-            <div className="w-[45%] p-10 bg-red-400 rounded-xl">
-                <h2 className="text-3xl font-semibold ">0</h2>
-                <h3 className="text-2xl font-medium">Failed Task</h3>
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <div className="h-1 bg-gradient-to-r from-red-400 to-red-600 w-full"></div>
+                <div className="p-6">
+                    <h2 className="text-4xl font-bold text-red-400 mb-2">0</h2>
+                    <h3 className="text-lg font-medium text-red-200">Failed Tasks</h3>
+                </div>
             </div>
         </div>
     );
