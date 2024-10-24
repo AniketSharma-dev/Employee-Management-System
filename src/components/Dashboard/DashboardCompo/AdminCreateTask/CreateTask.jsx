@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateTask = () => {
+const CreateTask = ({Admin}) => {
     return (
         <div className="mt-10">
             <h2 className="text-4xl font-bold mb-8 text-white bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent pb-1">Create New Task</h2>

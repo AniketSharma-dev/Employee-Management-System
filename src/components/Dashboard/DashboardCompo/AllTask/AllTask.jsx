@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AllTask = () => {
+const AllTask = ({Admin}) => {
   return (
     <div className="w-full h-48 bg-[#1C1C1C] p-5 mt-10 flex flex-col gap-5 overflow-y-auto rounded-3xl custom-scrollbar">
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-4 px-5 flex justify-between items-center rounded-xl shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-red-500/30">

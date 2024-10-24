@@ -7,8 +7,8 @@ const AdminDashboard = ({loggedInUserData}) => {
   return (
     <div className="bg-[#121212] w-full px-20 ">
       <Header Admin={loggedInUserData} />
-      <CreateTask />
-      <AllTask />
+      <CreateTask Admin={loggedInUserData} />
+      <AllTask Admin={loggedInUserData} />
     </div>
   )
 }

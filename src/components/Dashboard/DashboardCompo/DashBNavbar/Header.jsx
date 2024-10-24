@@ -1,10 +1,9 @@
 import React from "react";
 
-const Header = (data) => {  
-  const isAdmin = data.Admin !== undefined;
-  const role = isAdmin ? data.Admin.id : data.emp.id;
-  const name = isAdmin ? data.Admin.name : data.emp.name;
-  
+const Header = ({Admin, emp}) => {
+  const isAdmin = Admin !== undefined;
+  const role = isAdmin ? Admin.role : emp.role || "User";  
+  const name = isAdmin ? Admin.name : emp.name|| "Employee";
   return (
     <div className="w-full py-8 flex justify-between items-center">
       <div className="flex flex-col">

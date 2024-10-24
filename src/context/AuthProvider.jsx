@@ -9,23 +9,23 @@ const AuthProvider = ({ children }) => {
 
 
   useEffect(() => {
-    
+
     setLocalStorage()
-    
-    // const fetchData = () => {
+
+    const fetchData = () => {
       const { employees, admin } = getLocalStorage();
       if (employees && admin) {
         setUserData({ employees, admin });
       }
-    // }
+    }
 
-    
-  // const timer = setTimeout(() => {
-  //   fetchData();
-  // }, 1000);
 
-  // return () => clearTimeout(timer);
-    
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+
   }, [])
 
 
