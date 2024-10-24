@@ -1,9 +1,14 @@
 import React from "react";
 
-const Header = ({Admin, emp}) => {
-  const isAdmin = Admin !== undefined;
-  const role = isAdmin ? Admin.role : emp.role || "User";  
-  const name = isAdmin ? Admin.name : emp.name|| "Employee";
+const Header = ({ Admin, emp }) => {
+  const isAdmin = Admin !== undefined;  
+  const role = isAdmin ? "Admin" : "Employee";
+  const name = isAdmin ? Admin.name : emp.name || "Employee";
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  }
   return (
     <div className="w-full py-8 flex justify-between items-center">
       <div className="flex flex-col">
@@ -11,10 +16,11 @@ const Header = ({Admin, emp}) => {
           Hello!
         </h1>
         <span className="text-5xl font-semibold text-white mt-2">
-          {name}👋<sup className="text-[30px]">{role}</sup> 
+          {name}👋<sup className="text-[30px] text-red-300">{role}</sup>
         </span>
       </div>
-      <button className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold px-6 py-3 rounded-full hover:from-red-600 hover:to-pink-600 transition duration-300 ease-in-out shadow-lg hover:shadow-red-500/30 transform hover:scale-105">
+      <button onClick={handleLogout}
+        className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold px-6 py-3 rounded-full hover:from-red-600 hover:to-pink-600 transition duration-300 ease-in-out shadow-lg hover:shadow-red-500/30 transform hover:scale-105">
         Log Out
       </button>
     </div>

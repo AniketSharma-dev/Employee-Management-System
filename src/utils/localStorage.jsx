@@ -23,7 +23,7 @@ const employee = [
             {
                 taskTitle: "Project A",
                 taskDescription: "Complete phase 1",
-                taskDate: "2023-06-15",
+                taskDate: "15 Jun 2024",
                 category: "Development",
                 active: true,
                 newTask: false,
@@ -33,7 +33,7 @@ const employee = [
             {
                 taskTitle: "Meeting",
                 taskDescription: "Client presentation",
-                taskDate: "2023-06-16",
+                taskDate: "16 Jun 2024",
                 category: "Communication",
                 active: false,
                 newTask: true,
@@ -43,7 +43,7 @@ const employee = [
             {
                 taskTitle: "Bug fix",
                 taskDescription: "Resolve login issue",
-                taskDate: "2023-06-14",
+                taskDate: "14 Jun 2024",
                 category: "Maintenance",
                 active: true,
                 newTask: false,
@@ -53,7 +53,7 @@ const employee = [
             {
                 taskTitle: "Documentation",
                 taskDescription: "Update user manual",
-                taskDate: "2023-06-17",
+                taskDate: "17 Jun 2024",
                 category: "Documentation",
                 active: false,
                 newTask: false,
@@ -63,7 +63,7 @@ const employee = [
             {
                 taskTitle: "Code review",
                 taskDescription: "Review team's code",
-                taskDate: "2023-06-18",
+                taskDate: "18 Jun 2024",
                 category: "Quality Assurance",
                 active: true,
                 newTask: true,
@@ -87,7 +87,7 @@ const employee = [
             {
                 taskTitle: "Database optimization",
                 taskDescription: "Improve query performance",
-                taskDate: "2023-06-15",
+                taskDate: "15 Jun 2024",
                 category: "Database",
                 active: true,
                 newTask: false,
@@ -97,7 +97,7 @@ const employee = [
             {
                 taskTitle: "UI design",
                 taskDescription: "Create mockups for new feature",
-                taskDate: "2023-06-16",
+                taskDate: "16 Jun 2024",
                 category: "Design",
                 active: false,
                 newTask: true,
@@ -107,7 +107,7 @@ const employee = [
             {
                 taskTitle: "Testing",
                 taskDescription: "Perform unit tests",
-                taskDate: "2023-06-17",
+                taskDate: "17 Jun 2024",
                 category: "Quality Assurance",
                 active: true,
                 newTask: false,
@@ -117,7 +117,7 @@ const employee = [
             {
                 taskTitle: "Deployment",
                 taskDescription: "Deploy to staging environment",
-                taskDate: "2023-06-18",
+                taskDate: "18 Jun 2024",
                 category: "DevOps",
                 active: false,
                 newTask: false,
@@ -141,7 +141,7 @@ const employee = [
             {
                 taskTitle: "API integration",
                 taskDescription: "Integrate payment gateway",
-                taskDate: "2023-06-15",
+                taskDate: "15 Jun 2024",
                 category: "Development",
                 active: true,
                 newTask: false,
@@ -151,7 +151,7 @@ const employee = [
             {
                 taskTitle: "Security audit",
                 taskDescription: "Perform security checks",
-                taskDate: "2023-06-16",
+                taskDate: "16 Jun 2024",
                 category: "Security",
                 active: false,
                 newTask: true,
@@ -161,7 +161,7 @@ const employee = [
             {
                 taskTitle: "Performance optimization",
                 taskDescription: "Optimize app loading time",
-                taskDate: "2023-06-17",
+                taskDate: "17 Jun 2024",
                 category: "Performance",
                 active: true,
                 newTask: false,
@@ -171,7 +171,7 @@ const employee = [
             {
                 taskTitle: "Code refactoring",
                 taskDescription: "Refactor authentication module",
-                taskDate: "2023-06-18",
+                taskDate: "18 Jun 2024",
                 category: "Development",
                 active: false,
                 newTask: false,
@@ -181,7 +181,7 @@ const employee = [
             {
                 taskTitle: "Feature implementation",
                 taskDescription: "Implement user profile page",
-                taskDate: "2023-06-19",
+                taskDate: "19 Jun 2024",
                 category: "Development",
                 active: true,
                 newTask: true,
@@ -191,7 +191,7 @@ const employee = [
             {
                 taskTitle: "Bug fixing",
                 taskDescription: "Fix reported bugs",
-                taskDate: "2023-06-20",
+                taskDate: "20 Jun 2024",
                 category: "Maintenance",
                 active: false,
                 newTask: false,
@@ -215,7 +215,7 @@ const employee = [
             {
                 taskTitle: "Data analysis",
                 taskDescription: "Analyze user behavior data",
-                taskDate: "2023-06-15",
+                taskDate: "15 Jun 2024",
                 category: "Analytics",
                 active: true,
                 newTask: false,
@@ -225,7 +225,7 @@ const employee = [
             {
                 taskTitle: "Report generation",
                 taskDescription: "Create monthly performance report",
-                taskDate: "2023-06-16",
+                taskDate: "16 Jun 2024",
                 category: "Reporting",
                 active: false,
                 newTask: true,
@@ -235,7 +235,7 @@ const employee = [
             {
                 taskTitle: "User research",
                 taskDescription: "Conduct user interviews",
-                taskDate: "2023-06-17",
+                taskDate: "17 Jun 2024",
                 category: "Research",
                 active: true,
                 newTask: false,
@@ -259,7 +259,7 @@ const employee = [
             {
                 taskTitle: "Content creation",
                 taskDescription: "Write blog posts",
-                taskDate: "2023-06-15",
+                taskDate: "15 Jun 2024",
                 category: "Marketing",
                 active: true,
                 newTask: false,
@@ -269,7 +269,7 @@ const employee = [
             {
                 taskTitle: "Social media management",
                 taskDescription: "Schedule social media posts",
-                taskDate: "2023-06-16",
+                taskDate: "16 Jun 2024",
                 category: "Marketing",
                 active: false,
                 newTask: true,
@@ -279,7 +279,7 @@ const employee = [
             {
                 taskTitle: "Email campaign",
                 taskDescription: "Design email newsletter",
-                taskDate: "2023-06-17",
+                taskDate: "17 Jun 2024",
                 category: "Marketing",
                 active: true,
                 newTask: false,
@@ -289,7 +289,7 @@ const employee = [
             {
                 taskTitle: "SEO optimization",
                 taskDescription: "Optimize website content for SEO",
-                taskDate: "2023-06-18",
+                taskDate: "18 Jun 2024",
                 category: "SEO",
                 active: false,
                 newTask: false,
@@ -299,7 +299,7 @@ const employee = [
             {
                 taskTitle: "Analytics review",
                 taskDescription: "Review website analytics",
-                taskDate: "2023-06-19",
+                taskDate: "19 Jun 2024",
                 category: "Analytics",
                 active: true,
                 newTask: true,
@@ -309,7 +309,7 @@ const employee = [
             {
                 taskTitle: "Customer support",
                 taskDescription: "Respond to customer inquiries",
-                taskDate: "2023-06-20",
+                taskDate: "20 Jun 2024",
                 category: "Support",
                 active: false,
                 newTask: false,
@@ -319,7 +319,7 @@ const employee = [
             {
                 taskTitle: "Product documentation",
                 taskDescription: "Update product documentation",
-                taskDate: "2023-06-21",
+                taskDate: "21 Jun 2024",
                 category: "Documentation",
                 active: true,
                 newTask: false,
