@@ -3,12 +3,12 @@ import Header from './DashboardCompo/DashBNavbar/Header'
 import CreateTask from './DashboardCompo/AdminCreateTask/CreateTask'
 import AllTask from './DashboardCompo/AllTask/AllTask'
 
-const AdminDashboard = ({user}) => {
+const AdminDashboard = ({loggedInUserData}) => {
   return (
     <div className="bg-[#121212] w-full px-20 ">
-        <Header Admin={user} />
-        <CreateTask/>
-        <AllTask/>
+      <Header Admin={loggedInUserData} />
+      <CreateTask />
+      <AllTask />
     </div>
   )
 }

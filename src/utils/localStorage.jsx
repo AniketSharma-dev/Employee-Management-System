@@ -1,6 +1,7 @@
 // Admin data
 const admin = {
     id: "admin1",
+    name: "Aniket",
     email: "admin@example.com",
     password: "admin",
 };
@@ -9,8 +10,15 @@ const admin = {
 const employee = [
     {
         id: "emp1",
+        name: "Amit",
         email: "emp1@example.com",
         password: "123",
+        taskCounts: {
+            active: 2,
+            newTask: 2,
+            completed: 1,
+            failed: 1,
+        },
         tasks: [
             {
                 taskTitle: "Project A",
@@ -66,8 +74,15 @@ const employee = [
     },
     {
         id: "emp2",
+        name: "Rahul",
         email: "emp2@example.com",
         password: "123",
+        taskCounts: {
+            active: 2,
+            newTask: 1,
+            completed: 1,
+            failed: 1,
+        },
         tasks: [
             {
                 taskTitle: "Database optimization",
@@ -113,8 +128,15 @@ const employee = [
     },
     {
         id: "emp3",
+        name: "Priya",
         email: "emp3@example.com",
         password: "123",
+        taskCounts: {
+            active: 2,
+            newTask: 1,
+            completed: 2,
+            failed: 1,
+        },
         tasks: [
             {
                 taskTitle: "API integration",
@@ -180,8 +202,15 @@ const employee = [
     },
     {
         id: "emp4",
+        name: "Suresh",
         email: "emp4@example.com",
         password: "123",
+        taskCounts: {
+            active: 2,
+            newTask: 1,
+            completed: 1,
+            failed: 0,
+        },
         tasks: [
             {
                 taskTitle: "Data analysis",
@@ -217,8 +246,15 @@ const employee = [
     },
     {
         id: "emp5",
+        name: "Ravi",
         email: "emp5@example.com",
         password: "123",
+        taskCounts: {
+            active: 2,
+            newTask: 2,
+            completed: 2,
+            failed: 1,
+        },
         tasks: [
             {
                 taskTitle: "Content creation",
@@ -295,8 +331,17 @@ const employee = [
 ];
 
 export const setLocalStorage = () => {
-    localStorage.setItem("employee", JSON.stringify(employee))
-    localStorage.setItem("admin", JSON.stringify(admin))
+    if (!localStorage.getItem("employee")) {
+        localStorage.setItem("employee", JSON.stringify(employee));
+        console.log("Employee data initialized in localStorage");
+    }
+
+    if (!localStorage.getItem("admin")) {
+        localStorage.setItem("admin", JSON.stringify(admin));
+        console.log("Admin data initialized in localStorage");
+    }
+    // localStorage.setItem("employee", JSON.stringify(employee))
+    // localStorage.setItem("admin", JSON.stringify(admin))
 }
 export const getLocalStorage = () => {
     const employees = JSON.parse(localStorage.getItem("employee"))

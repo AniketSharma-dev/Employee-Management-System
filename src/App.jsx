@@ -5,27 +5,61 @@ import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
+  const [user, setUser] = useState(null);
+  const [loggedInUserData, setLoggedInUserData] = useState(null);
+  const auth = useContext(AuthContext);
 
-  const [user, setUser] = useState(null)
+  // useEffect(() => {
 
-  const auth = useContext(AuthContext)  
-  
+  //   if (auth) {
+  //     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
+  //     console.log(loggedInUser);
+
+  //     if (loggedInUser) {
+  //       setUser(loggedInUser.role)
+  //     }
+  //   }
+
+  // }, [auth])
+
   const handelLogin = (email, password) => {
-    if (email === "admin@example.com" && password === "admin") {
-      setUser("admin")
-    } else if (email === "emp1@example.com" && password === "123") {
-      setUser("emp1")
+    const admin =
+      auth.admin.email === email && auth.admin.password === password;
+    if (auth && admin) {
+      if (admin) {
+        setUser("admin");
+        setLoggedInUserData(auth.admin);
+        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
+      }
+    } else if (auth && auth.employees) {
+      const employee = auth.employees.find(
+        (emp) => email === emp.email && password === emp.password
+      );
+      if (employee) {
+        const { id } = employee;
+        setUser(id);
+        setLoggedInUserData(employee);
+        localStorage.setItem(
+          "loggedInUser",
+          JSON.stringify({ role: "employee", id })
+        );
+      }
     } else {
       alert("Invalid Credentials");
     }
-  }
-
+  };
 
   return (
     <>
-      {!user ? <Login handelLogin={handelLogin} /> : ""}
+      {/* {!user ? <Login handelLogin={handelLogin} /> : ""} */}
 
-      {!user ? (<Login handelLogin={handelLogin} />) : user === "admin" ? (<AdminDashboard user={user} />) : (<EmployeeDashboard user={user} />)}
+      {!user ? (
+        <Login handelLogin={handelLogin} />
+      ) : user === "admin" ? (
+        <AdminDashboard loggedInUserData={loggedInUserData} />
+      ) : (
+        <EmployeeDashboard loggedInUserData={loggedInUserData} />
+      )}
     </>
   );
 };
