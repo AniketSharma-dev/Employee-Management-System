@@ -297,29 +297,10 @@ const employee = [
 export const setLocalStorage = () => {
     localStorage.setItem("employee", JSON.stringify(employee))
     localStorage.setItem("admin", JSON.stringify(admin))
-
 }
 export const getLocalStorage = () => {
     const employees = JSON.parse(localStorage.getItem("employee"))
     const admin = JSON.parse(localStorage.getItem("admin"))
 
-    console.log(employees, admin);
-    
-
+    return { employees, admin}
 }
-
-// // Function to initialize local storage with admin and employee data
-// export const initializeLocalStorage = () => {
-//   localStorage.setItem('adminData', JSON.stringify(adminData));
-//   localStorage.setItem('employeeData', JSON.stringify(employeeData));
-// };
-
-// // Function to get admin data from local storage
-// export const getAdminData = () => {
-//   return JSON.parse(localStorage.getItem('adminData'));
-// };
-
-// // Function to get employee data from local storage
-// export const getEmployeeData = () => {
-//   return JSON.parse(localStorage.getItem('employeeData'));
-// };
