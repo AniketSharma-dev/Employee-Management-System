@@ -25,9 +25,12 @@ const AuthProvider = ({ children }) => {
   if (!userData) {
     // Return null or a loading indicator until data is available
     return (
-      <div className="w-full h-screen flex items-center justify-center bg-black text-white text-2xl font-bold">
-        Loading...
+      <div className="w-full h-screen flex items-center justify-center">
+        <div class="loader w-fit h-[2.5rem] whitespace-pre text-white font-bold font-mono overflow-hidden leading-[1.2em] text-[30px] relative"></div>
       </div>
+      // <div className="w-full h-screen flex items-center justify-center bg-black text-white text-2xl font-bold">
+      //   Loading...
+      // </div>
     );
   }
 
