@@ -30,10 +30,10 @@ const AdminDashboard = ({ loggedInUserData }) => {
   }
 
   return (
-    <div className="bg-[#121212] w-full px-20 ">
+    <div className="bg-[#121212] w-full h-[200vh] px-20 ">
       <Header Admin={userData} />
-      <CreateTask Admin={userData} />
-      <AllTask Admin={userData} />
+      <CreateTask />
+      <AllTask />
     </div>
   )
 }
