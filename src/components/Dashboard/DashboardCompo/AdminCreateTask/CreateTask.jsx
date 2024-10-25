@@ -15,18 +15,34 @@ const CreateTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Task Created Successfully", taskTitle, taskDate, taskEmployee, taskCategory, taskDescription);
-    setNewTask({ taskTitle, taskDate, taskEmployee, taskCategory, taskDescription, active: false, newTask: true, completed: false, failed: false })
+
+
+    const newTaskData ={
+      taskTitle,
+      taskDate,
+      taskEmployee,
+      taskCategory,
+      taskDescription,
+      active: false,
+      newTask: true,
+      completed: false,
+      failed: false
+    }
+
+    setNewTask(newTaskData)
     const employee = JSON.parse(localStorage.getItem("employee"));
+    
 
     employee.forEach((emp) => {
       if (emp.name === taskEmployee) {
-        console.log(emp.tasks.push(newTask));
+        emp.tasks.push(newTaskData)
         console.log(emp.tasks);
-        
-        
       }
     });
+
+    localStorage.setItem("employee", JSON.stringify(employee))
+
+
     // Clear the input fields
     setTaskTitle("");
     setTaskEmployee("");
