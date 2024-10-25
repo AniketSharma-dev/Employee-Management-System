@@ -7,25 +7,23 @@ import { AuthContext } from "./context/AuthProvider";
 const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
-  const auth = useContext(AuthContext);
+  const {userData, setUserData} = useContext(AuthContext);  
 
   useEffect(() => {
 
-    if (auth) {
       const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
       if (loggedInUser) {
         setUser(loggedInUser.role)
         setLoggedInUserData(loggedInUser.data)        
       }
-    }
-  }, [auth])
+  }, [userData])
 
   const handelLogin = (email, password) => {
-    const admin = auth?.admin.email === email && auth.admin.password === password;
-    const employee = auth?.employees.find((emp) => email === emp.email && password === emp.password);
-    if (admin) {
+    // const admin = userData.email === email && auth.admin.password === password;
+    const employee = userData.find((emp) => email === emp.email && password === emp.password);
+    if (email === "admin@example.com" && password === "admin") {
         setUser("admin");
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin", data: auth.admin }));
+        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin",}));
     } else if (employee) {
         setUser("employee");
         localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data: employee }));

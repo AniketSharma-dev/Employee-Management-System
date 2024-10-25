@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../../../context/AuthProvider";
 
 const CreateTask = () => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -8,45 +9,42 @@ const CreateTask = () => {
     return today;
   });
   const [taskEmployee, setTaskEmployee] = useState("");
-  const [taskCategory, setTaskCategory] = useState("");
+  const [category, setCategory] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
 
   const [newTask, setNewTask] = useState({})
 
+
+
+  const { userData, setUserData } = useContext(AuthContext)
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setNewTask({taskTitle, taskDescription, taskDate, category, active: false, newTask: true, completed: false, failed: false})
 
-    const newTaskData ={
-      taskTitle,
-      taskDate,
-      taskEmployee,
-      taskCategory,
-      taskDescription,
-      active: false,
-      newTask: true,
-      completed: false,
-      failed: false
-    }
+    const data = userData
 
-    setNewTask(newTaskData)
-    const employee = JSON.parse(localStorage.getItem("employee"));
+    console.log(data);
     
 
-    employee.forEach((emp) => {
+    data.forEach((emp) => {
       if (emp.name === taskEmployee) {
-        emp.tasks.push(newTaskData)
+        emp.tasks.push(newTask)
+        emp.taskCounts.newTask += 1
         console.log(emp.tasks);
       }
     });
 
-    localStorage.setItem("employee", JSON.stringify(employee))
+    setUserData(data)
+
+    console.log(data);
 
 
     // Clear the input fields
     setTaskTitle("");
     setTaskEmployee("");
-    setTaskCategory("");
+    setCategory("");
     setTaskDescription("");
   };
 
@@ -64,6 +62,7 @@ const CreateTask = () => {
           <div className="w-full md:w-1/2 space-y-6">
             <div className="relative">
               <input
+                required
                 value={taskTitle}
                 onChange={(e) => setTaskTitle(e.target.value)}
                 type="text"
@@ -78,6 +77,7 @@ const CreateTask = () => {
             </div>
             <div className="relative">
               <input
+                required
                 value={taskDate}
                 onChange={(e) => setTaskDate(e.target.value)}
                 type="date"
@@ -91,6 +91,7 @@ const CreateTask = () => {
             </div>
             <div className="relative">
               <input
+                required
                 value={taskEmployee}
                 onChange={(e) => setTaskEmployee(e.target.value)}
                 type="text"
@@ -105,8 +106,9 @@ const CreateTask = () => {
             </div>
             <div className="relative">
               <input
-                value={taskCategory}
-                onChange={(e) => setTaskCategory(e.target.value)}
+                required
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
                 type="text"
                 id="category"
                 placeholder="Design, Dev, etc"
@@ -121,6 +123,7 @@ const CreateTask = () => {
           <div className="w-full md:w-1/2 space-y-6">
             <div className="relative">
               <textarea
+                required
                 value={taskDescription}
                 onChange={(e) => setTaskDescription(e.target.value)}
                 id="description"

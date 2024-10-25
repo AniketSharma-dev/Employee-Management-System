@@ -3,7 +3,7 @@ import React from "react";
 const Header = ({ Admin, emp, changeUser }) => {
   const isAdmin = Admin !== undefined;  
   const role = isAdmin ? "Admin" : "Employee";
-  const name = isAdmin ? Admin.name : emp.name || "Employee";
+  const name = isAdmin ? "Aniket" : emp.name || "Employee";
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");

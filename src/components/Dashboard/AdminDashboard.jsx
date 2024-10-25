@@ -11,7 +11,7 @@ const AdminDashboard = ({ loggedInUserData, changeUser }) => {
       if (!userData) {
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
         if (loggedInUser && loggedInUser.role === "admin") {
-          setUserData(loggedInUser.data);
+          setUserData(loggedInUser);
         }
       }
     }
