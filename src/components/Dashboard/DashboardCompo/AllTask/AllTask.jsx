@@ -2,10 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../../../context/AuthProvider";
 
 const AllTask = ({ Admin }) => {
-    const authData = useContext(AuthContext);
-
-    console.log(authData.employees);
-    
+    const authData = useContext(AuthContext);    
     return (
         <div className="w-full h-50 bg-[#1E1E1E] p-8 mt-10 flex flex-col gap-6 overflow-y-auto rounded-3xl custom-scrollbar shadow-md">
             <div className="grid grid-cols-5 text-gray-300 font-semibold mb-4 border-b-2 border-gray-600 pb-4">

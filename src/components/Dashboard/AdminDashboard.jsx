@@ -3,7 +3,7 @@ import Header from './DashboardCompo/DashBNavbar/Header'
 import CreateTask from './DashboardCompo/AdminCreateTask/CreateTask'
 import AllTask from './DashboardCompo/AllTask/AllTask'
 
-const AdminDashboard = ({ loggedInUserData }) => {
+const AdminDashboard = ({ loggedInUserData, changeUser }) => {
   const [userData, setUserData] = useState(loggedInUserData);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const AdminDashboard = ({ loggedInUserData }) => {
 
   return (
     <div className="bg-[#121212] w-full h-[200vh] px-20 ">
-      <Header Admin={userData} />
+      <Header Admin={userData} changeUser={changeUser} />
       <CreateTask />
       <AllTask />
     </div>

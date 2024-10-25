@@ -39,9 +39,9 @@ const App = () => {
       {!user ? (
         <Login handelLogin={handelLogin} />
       ) : user === "admin" ? (
-        <AdminDashboard loggedInUserData={loggedInUserData} />
+        <AdminDashboard  changeUser={setUser} loggedInUserData={loggedInUserData} />
       ) : (
-        <EmployeeDashboard loggedInUserData={loggedInUserData} />
+        <EmployeeDashboard changeUser={setUser} loggedInUserData={loggedInUserData} />
       )}
     </>
   );

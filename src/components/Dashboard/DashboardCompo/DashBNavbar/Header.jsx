@@ -1,13 +1,15 @@
 import React from "react";
 
-const Header = ({ Admin, emp }) => {
+const Header = ({ Admin, emp, changeUser }) => {
   const isAdmin = Admin !== undefined;  
   const role = isAdmin ? "Admin" : "Employee";
   const name = isAdmin ? Admin.name : emp.name || "Employee";
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
-    window.location.reload();
+
+    changeUser(null);
+    // window.location.reload();
   }
   return (
     <div className="w-full py-8 flex justify-between items-center">

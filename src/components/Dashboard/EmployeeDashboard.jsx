@@ -3,7 +3,7 @@ import TaskList from "../TaskList/TaskList";
 import Header from "./DashboardCompo/DashBNavbar/Header";
 import TaskNumber from "./DashboardCompo/taskNumber/TaskNumber";
 
-const EmployeeDashboard = ({ loggedInUserData }) => {
+const EmployeeDashboard = ({ loggedInUserData, changeUser }) => {
     const [userData, setUserData] = useState(loggedInUserData);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const EmployeeDashboard = ({ loggedInUserData }) => {
     }
     return (
         <div className="bg-[#121212] w-full  px-20  h-screen">
-            <Header emp={userData} />
+            <Header emp={userData} changeUser={changeUser} />
             <TaskNumber emp={userData} />
             <TaskList emp={userData} />
         </div>
