@@ -16,7 +16,7 @@ const App = () => {
         setUser(loggedInUser.role)
         setLoggedInUserData(loggedInUser.data)        
       }
-  }, [userData])
+  }, [])
 
   const handelLogin = (email, password) => {
     // const admin = userData.email === email && auth.admin.password === password;

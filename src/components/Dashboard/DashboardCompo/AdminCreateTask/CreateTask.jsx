@@ -5,49 +5,55 @@ const CreateTask = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDate, setTaskDate] = useState(() => {
     // Set the default date to today's date
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split("T")[0];
     return today;
   });
   const [taskEmployee, setTaskEmployee] = useState("");
   const [category, setCategory] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
 
-  const [newTask, setNewTask] = useState({})
-
-
-
-  const { userData, setUserData } = useContext(AuthContext)
+  const { userData, setUserData } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setNewTask({taskTitle, taskDescription, taskDate, category, active: false, newTask: true, completed: false, failed: false})
+    const newTask = {
+      taskTitle,
+      taskDescription,
+      taskDate,
+      category,
+      active: false,
+      newTask: true,
+      completed: false,
+      failed: false,
+    };
 
-    const data = userData
+  // Create a new copy of userData
+  const newData = userData.map(emp => {
+    if (emp.name === taskEmployee) {
+      // Creating a new employee object with updated tasks and task counts
+      return {
+        ...emp,
+        tasks: [...emp.tasks, newTask], // Added new task
+        taskCounts: {
+          ...emp.taskCounts,
+          newTask: emp.taskCounts.newTask + 1, // Increment new task count
+        },
+      };
+    }
+    return emp; // Return unchanged employee
+  });
 
-    console.log(data);
-    
-
-    data.forEach((emp) => {
-      if (emp.name === taskEmployee) {
-        emp.tasks.push(newTask)
-        emp.taskCounts.newTask += 1
-        console.log(emp.tasks);
-      }
-    });
-
-    setUserData(data)
-
-    console.log(data);
-
+    // Update the context with the new data
+    setUserData(newData);
 
     // Clear the input fields
     setTaskTitle("");
     setTaskEmployee("");
     setCategory("");
     setTaskDescription("");
+    setTaskDate(new Date().toISOString().split("T")[0]);
   };
-
 
   return (
     <div className="mt-10">
@@ -60,6 +66,7 @@ const CreateTask = () => {
           className="flex flex-col md:flex-row gap-8"
         >
           <div className="w-full md:w-1/2 space-y-6">
+            {/* Task Title */}
             <div className="relative">
               <input
                 required
@@ -75,6 +82,7 @@ const CreateTask = () => {
                 }}
               />
             </div>
+            {/* Task Date */}
             <div className="relative">
               <input
                 required
@@ -89,6 +97,7 @@ const CreateTask = () => {
                 }}
               />
             </div>
+            {/* Task Employee */}
             <div className="relative">
               <input
                 required
@@ -104,6 +113,7 @@ const CreateTask = () => {
                 }}
               />
             </div>
+            {/* Task Category */}
             <div className="relative">
               <input
                 required
@@ -121,6 +131,7 @@ const CreateTask = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 space-y-6">
+            {/* Task Description */}
             <div className="relative">
               <textarea
                 required
@@ -136,6 +147,7 @@ const CreateTask = () => {
                 }}
               ></textarea>
             </div>
+            {/* Create Task Button */}
             <div className="flex justify-end mt-6">
               <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
                 Create Task

@@ -24,7 +24,7 @@ const AdminDashboard = ({ loggedInUserData, changeUser }) => {
   if (!userData) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
-        <div class="loader w-fit h-[2.5rem] whitespace-pre text-white font-bold font-mono overflow-hidden leading-[1.2em] text-[30px] relative"></div>
+        <div className="loader w-fit h-[2.5rem] whitespace-pre text-white font-bold font-mono overflow-hidden leading-[1.2em] text-[30px] relative"></div>
       </div>
     );
   }
