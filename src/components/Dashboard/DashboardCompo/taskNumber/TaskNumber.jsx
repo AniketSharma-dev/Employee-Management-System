@@ -1,6 +1,8 @@
 import React from "react";
 
-const TaskNumber = ({ emp }) => {
+const TaskNumber = ({ emp }) => { 
+    console.log(emp);
+           
     return (
         <div className="grid grid-cols-4 gap-6 mt-10">
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
