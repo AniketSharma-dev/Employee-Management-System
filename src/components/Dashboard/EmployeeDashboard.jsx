@@ -5,8 +5,6 @@ import TaskNumber from "./DashboardCompo/taskNumber/TaskNumber";
 
 const EmployeeDashboard = ({ loggedInUserData, changeUser }) => {
   const [userData, setUserData] = useState(loggedInUserData);
-  console.log(userData);
-
   useEffect(() => {
     const fetchData = () => {
       if (!userData) {
