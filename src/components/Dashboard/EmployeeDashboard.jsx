@@ -5,6 +5,7 @@ import TaskNumber from "./DashboardCompo/taskNumber/TaskNumber";
 
 const EmployeeDashboard = ({ loggedInUserData, changeUser }) => {
   const [userData, setUserData] = useState(loggedInUserData);
+
   useEffect(() => {
     const fetchData = () => {
       if (!userData) {
@@ -22,6 +23,7 @@ const EmployeeDashboard = ({ loggedInUserData, changeUser }) => {
 
   const updateUserData = (updatedData) => {
     setUserData(updatedData);
+    
   };
 
   if (!userData) {
