@@ -7,28 +7,32 @@ import { AuthContext } from "./context/AuthProvider";
 const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
-  const {userData, setUserData} = useContext(AuthContext);  
+  const { userData } = useContext(AuthContext);
 
   useEffect(() => {
-
-      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
-      if (loggedInUser) {
-        setUser(loggedInUser.role)
-        setLoggedInUserData(loggedInUser.data)        
-      }
-  }, [])
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (loggedInUser) {
+      setUser(loggedInUser.role);
+      setLoggedInUserData(loggedInUser.data);
+    }
+  }, []);
 
   const handelLogin = (email, password) => {
     // const admin = userData.email === email && auth.admin.password === password;
-    const employee = userData.find((emp) => email === emp.email && password === emp.password);
+    const employee = userData.find(
+      (emp) => email === emp.email && password === emp.password
+    );
     if (email === "admin@example.com" && password === "admin") {
-        setUser("admin");
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin",}));
+      setUser("admin");
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
     } else if (employee) {
-        setUser("employee");
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data: employee }));
+      setUser("employee");
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ role: "employee", data: employee })
+      );
     } else {
-      alert("Invalid Credentials");
+      return "Invalid Credentials";
     }
   };
 
@@ -37,9 +41,15 @@ const App = () => {
       {!user ? (
         <Login handelLogin={handelLogin} />
       ) : user === "admin" ? (
-        <AdminDashboard  changeUser={setUser} loggedInUserData={loggedInUserData} />
+        <AdminDashboard
+          changeUser={setUser}
+          loggedInUserData={loggedInUserData}
+        />
       ) : (
-        <EmployeeDashboard changeUser={setUser} loggedInUserData={loggedInUserData} />
+        <EmployeeDashboard
+          changeUser={setUser}
+          loggedInUserData={loggedInUserData}
+        />
       )}
     </>
   );
